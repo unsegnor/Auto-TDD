@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  http-api:
+    container_name: "${CONTAINER_NAME:-api}"
+    image: http-api
+    build:
+      context: .
+      dockerfile: ./http-api/Dockerfile
+    ports:
+      - "3000:3000"
+    # I had to duplicate the healthcheck here and inside the Dockerfile
+    # because without defininfg the healthcheck here, when running compose up it was taking more than 30 seconds to be healthy
+    # while when running docker run directly the container was ready in 2 seconds
+    # also when running compose up with this healthcheck defined it takes only 2 seconds
+    healthcheck:
+      test: ["CMD", "node", "./http-api/healthcheck.js"]
+      interval: 1s
+      timeout: 20s
+      retries: 5
+      start_period: 1s

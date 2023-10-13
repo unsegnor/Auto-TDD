@@ -1,0 +1,58 @@
+{
+  "name": "new-app-template",
+  "version": "3.3.101",
+  "description": "New application schema",
+  "main": "index.js",
+  "dockerHubUsername": "vcalatayud",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.0.0",
+    "@stryker-mutator/core": "6.4.2",
+    "@stryker-mutator/mocha-runner": "7.0.0",
+    "chai": "4.3.10",
+    "mocha": "10.2.0",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "test": "npm run test-mocha && npm run test-cucumber && npm run test-api && npm run test-lambda",
+    "test-mocha": "npm run test-doubles && npm run test-domain && npm run test-adapters && npm run test-integration && npm run test-mutation",
+    "test-domain": "mocha domain --recursive",
+    "test-doubles": "mocha test-doubles --recursive",
+    "test-adapters": "mocha adapters --recursive",
+    "test-integration": "mocha test-integration --recursive",
+    "test-api": "npm run build-api-image && CONTAINER_NAME=api-auto-test-container && mocha test-http-api --recursive",
+    "test-lambda": "npm run build-lambda-image && CONTAINER_NAME=lambda-auto-test-container && mocha test-lambda-function --recursive",
+    "build-lambda-image": "docker build -t lambda-test-image -f ./lambda-function/Dockerfile .",
+    "test-mutation": "npx stryker run",
+    "test-cucumber": "cucumber-js",
+    "local-api": "node ./http-api/start.js",
+    "build-api-image": "docker build -t api-test-image -f ./http-api/Dockerfile .",
+    "api-container": "npm run build-api-image && docker run -d -p 3000:3000 --name api-test-container api-test-image",
+    "api-container-logs": "docker logs api-test-container",
+    "container-app": "CONTAINER_NAME=dev-api && docker-compose up -d --wait",
+    "remove-api-container": "docker rm -f api-test-container"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unsegnor/new-app.git"
+  },
+  "keywords": [
+    "New",
+    "app",
+    "test",
+    "BDD",
+    "gherkins",
+    "cucumber",
+    "CI"
+  ],
+  "author": "Víctor Calatayud Asensio",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/unsegnor/new-app/issues"
+  },
+  "homepage": "https://github.com/unsegnor/new-app#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1363.0",
+    "axios": "^1.3.5",
+    "express": "^4.18.2"
+  }
+}
