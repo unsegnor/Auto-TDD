@@ -1,7 +1,7 @@
 {
-  "name": "new-app-template",
-  "version": "3.3.101",
-  "description": "New application schema",
+  "name": "auto-tdd",
+  "version": "0.1.1",
+  "description": "Automated development with TDD",
   "main": "index.js",
   "dockerHubUsername": "vcalatayud",
   "devDependencies": {
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unsegnor/new-app.git"
+    "url": "git+https://github.com/unsegnor/auto-tdd.git"
   },
   "keywords": [
     "New",
@@ -47,9 +47,9 @@
   "author": "Víctor Calatayud Asensio",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/unsegnor/new-app/issues"
+    "url": "https://github.com/unsegnor/auto-tdd/issues"
   },
-  "homepage": "https://github.com/unsegnor/new-app#readme",
+  "homepage": "https://github.com/unsegnor/auto-tdd#readme",
   "dependencies": {
     "aws-sdk": "^2.1363.0",
     "axios": "^1.3.5",
