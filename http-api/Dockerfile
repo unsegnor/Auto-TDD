@@ -1,4 +1,4 @@
-FROM node:20.8.0
+FROM node:20.8.1
 
 # Update npm
 RUN npm i -g npm@9.6.5
