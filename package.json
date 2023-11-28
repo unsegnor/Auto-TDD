@@ -1,6 +1,6 @@
 {
   "name": "auto-tdd",
-  "version": "0.1.44",
+  "version": "0.1.45",
   "description": "Automated development with TDD",
   "main": "index.js",
   "dockerHubUsername": "vcalatayud",
