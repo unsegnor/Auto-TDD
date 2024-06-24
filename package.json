@@ -9,7 +9,7 @@
     "@stryker-mutator/core": "6.4.2",
     "@stryker-mutator/mocha-runner": "7.0.0",
     "chai": "4.4.1",
-    "mocha": "10.4.0",
+    "mocha": "10.5.0",
     "uuid": "^10.0.0"
   },
   "scripts": {
