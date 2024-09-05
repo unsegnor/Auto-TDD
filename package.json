@@ -5,7 +5,7 @@
   "main": "index.js",
   "dockerHubUsername": "vcalatayud",
   "devDependencies": {
-    "@cucumber/cucumber": "^10.0.0",
+    "@cucumber/cucumber": "^11.0.0",
     "@stryker-mutator/core": "6.4.2",
     "@stryker-mutator/mocha-runner": "7.0.0",
     "chai": "4.5.0",
