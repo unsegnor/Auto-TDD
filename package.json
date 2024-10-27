@@ -10,7 +10,7 @@
     "@stryker-mutator/mocha-runner": "7.0.0",
     "chai": "4.5.0",
     "mocha": "10.5.0",
-    "uuid": "^10.0.0"
+    "uuid": "^11.0.0"
   },
   "scripts": {
     "test": "npm run test-mocha && npm run test-cucumber && npm run test-api && npm run test-lambda",
