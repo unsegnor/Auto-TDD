@@ -1,4 +1,4 @@
-FROM node:23.3.0
+FROM node:23.4.0
 
 # Update npm
 RUN npm i -g npm@9.6.5
