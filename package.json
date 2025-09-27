@@ -8,7 +8,7 @@
     "@cucumber/cucumber": "^11.0.0",
     "@stryker-mutator/core": "6.4.2",
     "@stryker-mutator/mocha-runner": "7.0.0",
-    "chai": "6.0.1",
+    "chai": "6.2.0",
     "mocha": "10.5.0",
     "uuid": "^13.0.0"
   },
